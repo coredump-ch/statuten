@@ -1,0 +1,267 @@
+%%% PREAMBLE %%%
+
+% Strict mode
+
+\RequirePackage[l2tabu, orthodox]{nag} % Warn when using deprecated constructs
+
+% Document class and packages
+
+\documentclass[10pt,a4paper,parskip,fleqn]{scrartcl}
+\usepackage[a4paper,vmargin={30mm},hmargin={30mm}]{geometry} % Page margins
+\usepackage[ngerman]{babel} % New German hyphenation (multilingual support)
+\usepackage[utf8x]{inputenc} % Unicode support
+\usepackage{graphicx} % Graphics support
+\usepackage{enumitem}
+\usepackage{verbatimbox}
+
+% Font configuration
+
+\usepackage[sc]{mathpazo} % Use palatino font
+\usepackage[T1]{fontenc} % Use correct font encoding
+\usepackage[babel=true]{microtype} % Micro-typographic optimizations
+\addtokomafont{disposition}{\rmfamily} % Set palatino as heading font
+
+% Section Titles
+
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{§ \thesection{} -- }{0em}{}
+
+% Numbering
+
+\renewcommand*{\labelenumi}{\thesection.\arabic{enumi}}
+\renewcommand*{\labelenumii}{\labelenumi.\arabic{enumii}}
+
+% Easier enumerations
+
+\newcommand{\ol}{\begin{enumerate}[itemsep=-0.2em,topsep=-0.2em]}
+\newcommand{\lo}{\end{enumerate}}
+\newcommand{\li}{\item}
+
+
+
+%%% TITLEPAGE %%%
+
+\title{\Huge Vereinsstatuten}
+\subject{coredump}
+\date{Stand: 26. August 2013}
+
+
+
+%%% HEADER / FOOTER %%%
+
+\usepackage{fancyhdr} % Fancy headers
+\usepackage{lastpage} % Page numbering
+
+% Capture title and author
+\makeatletter
+\let\Date\@date
+\makeatother
+
+% Fancy headers configuration
+\pagestyle{fancy}
+\fancyhead{} % Clear all header fields
+\fancyhead[LO,LE]{\bfseries Vereinsstatuten coredump}
+\fancyhead[RO,RE]{\bfseries \Date{}}
+\fancyfoot{} % Clear all footer fields
+\fancyfoot[CO,CE]{Seite \thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Better footer
+\cfoot{Seite \thepage\ von \pageref{LastPage}}
+
+
+%%% MAIN DOCUMENT %%%
+
+\begin{document}
+
+% Logo in ASCII-art
+\begin{verbbox}
+  ___ ___  _ __ ___  __| |_   _ _ __ ___  _ __  
+ / __/ _ \| '__/ _ \/ _` | | | | '_ ` _ \| '_ \ 
+| (_| (_) | | |  __/ (_| | |_| | | | | | | |_) |
+ \___\___/|_|  \___|\__,_|\__,_|_| |_| |_| .__/ 
+                                         |_|    
+\end{verbbox}
+
+\begin{titlepage}
+
+	\maketitle
+	\thispagestyle{empty} % Don't start page numbers on this page
+
+  \begin{center}
+
+		\vspace{1cm}
+
+		\theverbbox
+
+		\vfill
+
+		\large Beschlossen an der Gründungsversammlung vom 26. August 2013.
+
+		\vspace{1.5cm}
+
+		\begin{minipage}[t]{0.49\textwidth}
+			\center
+			\rule{5cm}{0.2mm}\\
+			Danilo Bargen, Präsident
+		\end{minipage}
+		\begin{minipage}[t]{0.49\textwidth}
+			\center
+			\rule{5cm}{0.2mm}\\
+			Josua Schmid, Kassier
+		\end{minipage}
+
+  \end{center}
+
+\end{titlepage}
+
+
+\section{Name und Sitz}
+
+\ol
+	\li Unter dem Namen \textit{coredump} besteht ein Verein im Sinne von Art. 60
+	ff. ZGB.
+	\li Der Sitz des Vereins ist Rapperswil-Jona. Für alle Rechtsstreitigkeiten
+	gilt schweizerisches Recht.
+\lo
+
+
+\section{Vereinszweck}
+
+\ol
+	\li Der Verein verfolgt folgende Ziele:
+    \ol
+      \li Bereitstellung der Infrastruktur zur Arbeit an nicht-kommerziellen
+			technischen Projekten.
+      \li Förderung des Informationsaustausches an regelmässigen Treffen,
+			speziell im Bereich der Technologie.
+    \lo
+		\li Der Verein handelt im Sinne der
+		Hackerethik\footnote{Siehe \texttt{http://www.ccc.de/de/hackerethik}}. Er
+		ist parteipolitisch und konfessionell neutral.
+\lo
+
+
+\section{Mitgliedschaft}
+
+\ol
+  \li Aktivmitglied mit Stimmberechtigung kann jede natürliche Person werden,
+	die sich mit dem Vereinszweck identifizieren kann.
+	\li Passivmitglied ohne Stimmberechtigung kann jede natürliche und juristische
+	Person werden.
+	\li Aufnahmegesuche sind an ein Vorstandsmitglied zur richten; über die
+	Aufnahme entscheidet der Vorstand.
+	\li Die Mitgliedschaft erlischt
+		\ol
+			\li bei natürlichen Personen durch Austritt, Ausschluss oder Tod
+			\li bei juristischen Personen durch Austritt, Ausschluss oder Auflösung
+		\lo
+\lo
+
+
+\section{Austritt und Ausschluss}
+
+\ol
+	\li Ein Vereinsaustritt ist per ende Vereinsjahr möglich. Das
+	Austrittsschreiben muss schriftlich an den Vorstand gerichtet werden.
+	\li Ein Mitglied kann jederzeit ohne Grundangabe aus dem Verein ausgeschlossen
+	werden. Der Vorstand fällt den Ausschlussentscheid; das Mitglied kann den
+	Ausschlussentscheid an die Generalversammlung weiterziehen.
+\lo
+
+
+\section{Organe des Vereins}
+
+\ol
+	\li Die Organe des Vereins sind:
+		\ol
+			\li die Generalversammlung
+			\li der Vorstand
+		\lo
+\lo
+
+
+\section{Die Generalversammlung}
+
+\ol
+	\li Das oberste Organ des Vereins ist die Generalversammlung. Eine ordentliche
+	Generalversammlung findet jährlich statt.
+	\li Zur Generalversammlung werden die Mitglieder drei Wochen zum voraus
+	schriftlich eingeladen, unter Beilage der Traktandenliste.
+	\li Die Generalversammlung hat die folgenden unentziehbaren Aufgaben:
+		\ol
+			\li Wahl bzw. Abwahl des Vorstandes
+			\li Festsetzung und Änderung der Statuten
+			\li Abnahme der Jahresrechung
+			\li Beschluss über das Jahresbudget
+			\li Festsetzung der Mitgliederbeiträge
+			\li Behandlung der Ausschlussrekurse
+		\lo
+	\li An der Generalversammlung besitzt jedes Mitglied eine Stimme; die
+	Beschlussfassung erfolgt mit einfachem Mehr.
+	\li Bei Stimmengleichheit entscheidet der Präsident mit Stichentscheid.
+	\li Passivmitglieder werden zur Generalversammlung eingeladen, besitzen jedoch
+	kein Stimmrecht.
+\lo
+
+
+\section{Der Vorstand}
+
+\ol
+	\li Der Vorstand besteht aus mindestens zwei Personen, nämlich dem Präsidenten
+	und dem Kassier.
+	\li Der Vorstand vertritt den Verein nach aussen und führt die laufenden
+	Geschäfte.
+\lo
+
+
+\section{Finanzen}
+
+\ol
+	\li Der Mitgliederbeitrag wird jährlich erhoben. Die Höhe des
+	Mitgliederbeitrags wird jährlich von der Vereinsversammlung festgelegt.
+	\li Tritt ein Mitglied während dem Vereinsjahre bei, wird der Mitgliederbeitrag
+	pro rata (monatlich) erhoben.
+	\li Das Vereinsjahr entspricht dem Kalenderjahr.
+\lo
+
+
+\section{Unterschrift, Haftung}
+
+\ol
+	\li Der Verein wird verpflichtet durch die Kollektivunterschrift des
+	Präsidenten zusammen mit einem weiteren Mitglied des Vorstandes.
+	\li Für die Schulden des Vereins haftet nur das Vereinsvermögen. Eine
+	persönliche Haftung der Mitglieder ist ausgeschlossen.
+\lo
+
+
+\section{Statutenänderung}
+
+\ol
+	\li Die vorliegenden Statuten können abgeändert werden, wenn ein absolutes
+	Mehr dem Änderungsvorschlag zustimmt.
+\lo
+
+
+\section{Auflösung des Vereins}
+
+\ol
+	\li Die Auflösung des Vereins kann mit absoluter Mehrheit beschlossen werden.
+	\li Bei einer Auflösung des Vereins fällt das Vereinsvermögen an eine
+	Institution, welche den gleichen oder einen ähnlichen Zweck verfolgt.
+\lo
+
+
+\section{Übergangs- und Vollzugsbestimmungen}
+
+\ol
+	\li Diese Statuten sind an der Gründungsversammlung vom 26.08.2012 angenommen
+	worden und sind mit diesem Datum in Kraft getreten.
+	\li Bei Unklarheiten über die Auslegung dieser Statuten entscheidet der
+	Vorstand abschliessend.
+\lo
+
+
+\end{document}
