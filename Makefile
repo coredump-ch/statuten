@@ -1,24 +1,16 @@
-SHELL=bash
-TARGET=statuten.pdf
-LL=latexmk -pdf
-CLEAN=latexmk -C
+SHELL = bash
+LL = latexmk -pdf
+FILES = coredump/statuten.pdf
+CLEAN = latexmk -C
 
-all: $(TARGET)
+all: $(FILES)
 
-pdf: $(TARGET)
-
-.PHONY : clean $(TARGET)
-
-$(TARGET): $(TARGET:%.pdf=%.tex) $(SRC)
-	$(LL) $<
+%.pdf: %.tex $(SRC)
+	cd `dirname $<` && $(LL) `basename $<`
 
 clean:
-	$(CLEAN)
+	for f in $(FILES); do cd `dirname $$f`; $(CLEAN); done
 
-mupdf:
-	mupdf $(TARGET) &
-
-zathura:
-	zathura $(TARGET) &
+.PHONY : clean
 
 # vim: set tabstop=4 shiftwidth=4 noexpandtab:
