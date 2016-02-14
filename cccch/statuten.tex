@@ -1,0 +1,240 @@
+%%% PREAMBLE %%%
+
+% Strict mode
+
+\RequirePackage[l2tabu, orthodox]{nag} % Warn when using deprecated constructs
+
+% Document class and packages
+
+\documentclass[10pt,a4paper,parskip,fleqn]{scrartcl}
+\usepackage[a4paper,vmargin={30mm},hmargin={30mm}]{geometry} % Page margins
+\usepackage[ngerman]{babel} % New German hyphenation (multilingual support)
+\usepackage[utf8x]{inputenc} % Unicode support
+\usepackage{graphicx} % Graphics support
+\usepackage{enumitem}
+\usepackage{verbatimbox}
+\usepackage{xspace}
+\usepackage{units}
+
+% Font configuration
+
+\usepackage[sc]{mathpazo} % Use palatino font
+\usepackage[T1]{fontenc} % Use correct font encoding
+\usepackage[babel=true]{microtype} % Micro-typographic optimizations
+\addtokomafont{disposition}{\rmfamily} % Set palatino as heading font
+
+% Section Titles
+
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{§ \thesection{} -- }{0em}{}
+
+% Numbering
+
+\renewcommand*{\labelenumi}{\thesection.\arabic{enumi}}
+\renewcommand*{\labelenumii}{\labelenumi.\arabic{enumii}}
+
+% Easier enumerations
+
+\newcommand{\ol}{\begin{enumerate}[itemsep=-0.2em,topsep=-0.2em]}
+\newcommand{\lo}{\end{enumerate}}
+\newcommand{\li}{\item}
+
+
+
+%%% VARIABLES %%%
+
+\newcommand{\name}{CCC-CH-Gruppe Coredump\xspace}
+\newcommand{\iname}{\textit{\name}\xspace}
+\newcommand{\parent}{Coredump Rapperswil\xspace}
+\newcommand{\iparent}{\textit{\parent}\xspace}
+\newcommand{\cccch}{CCC-CH\xspace}
+\newcommand{\icccch}{\textit{\cccch}\xspace}
+
+
+
+%%% TITLEPAGE %%%
+
+\title{\Huge Vereinsstatuten}
+\subject{\name}
+\date{Stand: Unreleased}
+
+
+
+%%% HEADER / FOOTER %%%
+
+\usepackage{fancyhdr} % Fancy headers
+\usepackage{lastpage} % Page numbering
+
+% Capture title and author
+\makeatletter
+\let\Date\@date
+\makeatother
+
+% Fancy headers configuration
+\pagestyle{fancy}
+\fancyhead{} % Clear all header fields
+\fancyhead[LO,LE]{\bfseries Vereinsstatuten \name}
+\fancyhead[RO,RE]{\bfseries \Date{}}
+\fancyfoot{} % Clear all footer fields
+\fancyfoot[CO,CE]{Seite \thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Better footer
+\cfoot{Seite \thepage\ von \pageref{LastPage}}
+
+
+%%% MAIN DOCUMENT %%%
+
+\begin{document}
+
+\begin{titlepage}
+
+	\maketitle
+	\thispagestyle{empty} % Don't start page numbers on this page
+
+  \begin{center}
+
+		\vspace{1cm}
+
+		\theverbbox
+
+		\vfill
+
+		\large Beschlossen an der Gründungsversammlung vom TBD.
+
+		\vspace{1.5cm}
+
+		\begin{minipage}[t]{0.49\textwidth}
+			\center
+			\rule{5cm}{0.2mm}\\
+			Danilo Bargen, Präsident
+		\end{minipage}
+		\begin{minipage}[t]{0.49\textwidth}
+			\center
+			\rule{5cm}{0.2mm}\\
+			Josua Schmid, Kassier
+		\end{minipage}
+
+  \end{center}
+
+\end{titlepage}
+
+
+\section{Name, Sitz \& Zweck}
+
+\ol
+	\li Unter dem Namen \iname besteht ein Verein im Sinne von Art. 60
+	ff. ZGB mit Sitz in Rapperswil-Jona.
+	\li Der Verein ist parteipolitisch und religiös neutral.
+	\li Er bezweckt den Austausch zwischen Hackern im \iparent und
+	deren Vertretung im \icccch.
+\lo
+
+
+\section{Mitgliedschaft}
+
+\ol
+  \li Jede natürliche Person, die im \iparent Mitglied ist und sich den
+	Zielsetzungen des \icccch verbunden fühlt, kann Mitglied in der \iname werden.
+	\li Aufnahmegesuche sind an ein Vorstandsmitglied zur richten; über die
+	Aufnahme entscheidet der Vorstand.
+	\li Mitglieder können per Monatsende aus dem Verein austreten. Dazu ist eine
+	schriftliche Mitteilung an den Vorstand notwendig. Bereits geschuldete
+	Beiträge werden nicht erstattet.
+	\li Die Mitgliedschaft erlischt durch Austritt, Ausschluss oder Tod.
+	\li Ein Mitglied kann jederzeit ohne Angabe eines Grundes aus dem Verein
+	ausgeschlossen werden. Der Vorstand fällt den Ausschlussentscheid; das
+	Mitglied kann den Ausschlussentscheid an die Generalversammlung weiterziehen.
+\lo
+
+
+\section{Organe des Vereins}
+
+\ol
+	\li Die Organe des Vereins sind:
+		\ol
+			\li die Generalversammlung
+			\li der Vorstand
+		\lo
+\lo
+
+
+\section{Die Generalversammlung}
+
+\ol
+	\li Die Generalversammlung ist das höchste Organ des Vereins. Sie beschliesst
+	mit einfacher Mehrheit der abgegebenen Stimmen:
+		\ol
+			\li Budgets und Mitgliederbeiträge inkl. Periodizität
+		\lo
+	\li Sie beschliesst mit qualifiziertem Mehr von $\nicefrac{2}{3}$ der
+	abgegebenen Stimmen:
+		\ol
+			\li Ausschluss von Mitgliedern
+			\li Änderung der Statuten
+			\li Auflösung des Vereines
+		\lo
+	\li Bei Stimmengleichheit entscheidet der Präsident mit Stichentscheid.
+	\li Jede Generalversammlung des \iparent fungiert gleichzeitig als
+	Generalversammlung der \iname.
+	\li Die Generalversammlung kann die Traktandenliste anpassen und über neue
+	Traktanden beschliessen; ausgenommen den Ausschluss von Mitgliedern.
+\lo
+
+
+\section{Der Vorstand}
+
+\ol
+	\li Der Vorstand des Vereins \iparent amtiert gleichzeitig als Vorstand der
+	\iname.
+	\li Er vertritt den Verein gegen aussen und führt die laufenden Geschäfte,
+	insbesondere die Kommunikation mit dem \icccch.
+\lo
+
+
+\section{Finanzen}
+
+\ol
+	\li Der Verein finanziert sich aus den Mitgliederbeiträgen sowie allfälligen
+	Spenden und Legaten.
+	\li Der Mitgliederbeitrag wird jährlich erhoben. Die Höhe des
+	Mitgliederbeitrags wird jährlich von der Vereinsversammlung festgelegt.
+	\li Für Personen, die dem Verein vor dem 1. August beitreten ist der volle
+	Mitgliederbeitrag für das laufende Jahr zu erstatten. Tritt eine Person aber
+	nach dem 1. August bei, so muss für das laufende Jahr kein Mitgliederbeitrag
+	entrichtet werden.
+	\li Das Vereinsjahr beginnt am TBD.
+\lo
+
+
+\section{Unterschrift, Haftung}
+
+\ol
+	\li Der Verein wird verpflichtet durch Einzelunterschrift, ausgenommen das
+	Eingehen von Dauerschuldverhältnissen kollektiv zu zweien. Die Aufnahme von
+	Krediten, das Leisten von Bürgschaften sowie öffentliche Beurkundungen
+	bedürfen zusätzlich der Bewilligung durch die Generalversammlung.
+	\li Für die Schulden des Vereins haftet nur das Vereinsvermögen. Eine
+	persönliche Haftung der Mitglieder ist ausgeschlossen.
+\lo
+
+
+\section{Auflösung des Vereins}
+
+\ol
+	\li Bei einer Auflösung des Vereins fällt das Vereinsvermögen an den \iparent.
+\lo
+
+
+\section{Übergangs- und Vollzugsbestimmungen}
+
+\ol
+	\li Diese Statuten sind an der Gründungsversammlung vom TBD
+	angenommen worden und sind mit diesem Datum in Kraft getreten.
+	\li Bei Unklarheiten über die Auslegung dieser Statuten entscheidet der
+	Vorstand abschliessend.
+\lo
+
+
+\end{document}
